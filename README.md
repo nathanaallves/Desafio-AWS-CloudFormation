@@ -12,9 +12,9 @@ Este laboratório tem como objetivo implementar uma infraestrutura automatizada 
 
 ## Estrutura do Repositório
 
- Template
- Prints
- README
+- Template;
+- Prints;
+- README.
 
 ## Passo a Passo
 
