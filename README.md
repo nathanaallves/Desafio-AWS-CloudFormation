@@ -12,10 +12,10 @@ Este laboratório tem como objetivo implementar uma infraestrutura automatizada 
 
 ## Estrutura do Repositório
 
-- **templates/**: Contém os arquivos YAML/JSON do CloudFormation.
-- **images/**: Capturas de tela da execução e resultados.
-- **docs/**: Documentação detalhada do passo a passo e insights.
-- **README.md**: Este arquivo de apresentação.
+ **templates/**: Contém os arquivos YAML/JSON do CloudFormation.
+ **images/**: Capturas de tela da execução e resultados.
+ **docs/**: Documentação detalhada do passo a passo e insights.
+ **README.md**: Este arquivo de apresentação.
 
 ## Passo a Passo
 
@@ -25,44 +25,4 @@ Este laboratório tem como objetivo implementar uma infraestrutura automatizada 
 4. Verificação do status da stack
 5. Documentação de prints e insights
 
-> Exemplo de print do status da stack:  
-> ![Stack Event](images/stack_event.png)
 
-## Arquivo de Template
-
-O template `myfirststack.yaml` contém os recursos básicos:
-
-```yaml
-AWSTemplateFormatVersion: "2010-09-09"
-Description: "Stack simples - EC2 + Security Group + VPC"
-
-Resources:
-  MyVPC:
-    Type: "AWS::EC2::VPC"
-    Properties:
-      CidrBlock: "10.0.0.0/16"
-      EnableDnsSupport: true
-      EnableDnsHostnames: true
-      Tags:
-        - Key: Name
-          Value: "MyVPC"
-
-  MySecurityGroup:
-    Type: "AWS::EC2::SecurityGroup"
-    Properties:
-      GroupDescription: "Security Group para EC2"
-      VpcId: !Ref MyVPC
-      SecurityGroupIngress:
-        - IpProtocol: tcp
-          FromPort: 22
-          ToPort: 22
-          CidrIp: 0.0.0.0/0
-
-  MyInstance:
-    Type: "AWS::EC2::Instance"
-    Properties:
-      ImageId: "ami-051f8a213df8bc089"
-      InstanceType: "t2.micro"
-      SecurityGroupIds:
-        - !Ref MySecurityGroup
-      SubnetId: !Ref MyVPC
