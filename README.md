@@ -12,10 +12,9 @@ Este laboratório tem como objetivo implementar uma infraestrutura automatizada 
 
 ## Estrutura do Repositório
 
- **templates/**: Contém os arquivos YAML/JSON do CloudFormation.
- **images/**: Capturas de tela da execução e resultados.
- **docs/**: Documentação detalhada do passo a passo e insights.
- **README.md**: Este arquivo de apresentação.
+ Template
+ Prints
+ README
 
 ## Passo a Passo
 
